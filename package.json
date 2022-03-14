@@ -1,0 +1,40 @@
+{
+  "name": "cycling_optimizer",
+  "version": "0.1.0",
+  "description": "Cycling path optimizer package, for optimal cycling route selection",
+  "main": "src/index.ts",
+  "target": "dist/index.cjs.js",
+  "scripts": {
+    "build": "rollup -c",
+    "build:dev": "rollup -c -w",
+    "dev": "concurrently \"npm:build:dev\" \"npm:lint:dev\" \"npm:serve:dev\"",
+    "serve": "node dist/index.cjs.js",
+    "serve:dev": "nodemon --delay 1 --inspect dist/index.cjs.js",
+    "test": "jest",
+    "test:dev": "jest --watch",
+    "lint": "eslint **/*.ts",
+    "lint:dev": "nodemon --watch src/ -e ts --exec \"npm run lint\""
+  },
+  "author": "Your Name <you@example.com>",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "express": "^4.17.2"
+  },
+  "devDependencies": {
+    "@rollup/plugin-typescript": "^8.3.0",
+    "@tsconfig/node16": "^1.0.2",
+    "@types/express": "^4.17.13",
+    "@types/jest": "^27.4.0",
+    "@typescript-eslint/eslint-plugin": "^5.12.0",
+    "@typescript-eslint/parser": "^5.12.0",
+    "concurrently": "^7.0.0",
+    "eslint": "^8.9.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-jest": "^26.1.1",
+    "jest": "^27.5.1",
+    "nodemon": "^2.0.15",
+    "rollup": "^2.67.2",
+    "ts-jest": "^27.1.3",
+    "typescript": "^4.5.5"
+  }
+}
